@@ -9,8 +9,7 @@ class AlunoController extends Controller
 {
     public function index() {
        $alunos = AlunoModel::all();
-       
-       
+        dd($alunos);
     }
 
     public function show($id) {
