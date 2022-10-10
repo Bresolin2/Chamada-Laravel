@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AlunoModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class AlunoController extends Controller
 {
@@ -23,4 +24,9 @@ class AlunoController extends Controller
         return view('create');
     }
     
+    public function store(Request $request) {
+        AlunoModel::create($request->only('nome'));
+
+        return redirect()->route('index');
+    }
 }
