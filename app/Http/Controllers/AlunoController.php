@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateAlunoFormRequest;
 use App\Models\AlunoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
@@ -24,7 +25,7 @@ class AlunoController extends Controller
         return view('create');
     }
     
-    public function store(Request $request) {
+    public function store(StoreUpdateAlunoFormRequest $request) {
         AlunoModel::create($request->only('nome'));
 
         return redirect()->route('index');
