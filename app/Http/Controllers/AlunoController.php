@@ -18,5 +18,9 @@ class AlunoController extends Controller
 
         return view('show', compact('alunos'));
     }
+
+    public function create() {
+        return view('create');
+    }
     
 }

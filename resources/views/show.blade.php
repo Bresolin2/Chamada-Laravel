@@ -9,4 +9,4 @@
         <li>{{ $alunos->telefone }}</li><br>
         <li>{{ $alunos->foto }}</li><br><br>
     </ul>
-@endsection
+{{-- @endsection --}}
