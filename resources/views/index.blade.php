@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', "Lista de Alunos")
+
 @section('content')
     <h1>Listagem
         <a href="{{route('create')}}">Cadastrar aluno</a>
@@ -10,7 +12,8 @@
             <li>
                 <b> Id:</b> {{ $aluno->id }} <br>
                 <b> Aluno:</b> {{ $aluno->nome }} <br>
-                <a href="{{ route('show', $aluno->id) }}">detalhes</a><br><br>
+                <a href="{{ route('edit', $aluno->id) }}">Editar</a><br>
+                <a href="{{ route('show', $aluno->id) }}">Detalhes</a><br><br>
             </li>
         @endforeach
     </ul>

@@ -9,25 +9,46 @@ use Illuminate\Support\Facades\Redis;
 
 class AlunoController extends Controller
 {
-    public function index() {
-       $alunos = AlunoModel::all();
+    public function index()
+    {
+        $alunos = AlunoModel::all();
         return view('index', compact('alunos'));
     }
 
-    public function show($id) {
-        if(!$alunos = AlunoModel::find($id))
-          return redirect()->route('index');
+    public function show($id)
+    {
+        if (!$alunos = AlunoModel::find($id))
+            return redirect()->route('index');
 
         return view('show', compact('alunos'));
     }
 
-    public function create() {
+    public function create()
+    {
         return view('create');
     }
-    
-    public function store(StoreUpdateAlunoFormRequest $request) {
+
+    public function store(StoreUpdateAlunoFormRequest $request)
+    {
         AlunoModel::create($request->only('nome'));
 
         return redirect()->route('index');
     }
+
+    public function edit($id)
+    {
+        if (!$alunos = AlunoModel::find($id))
+            return redirect()->route('index');
+
+        return view('edit', compact('alunos'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        if (!$alunos = AlunoModel::find($id))
+            return redirect()->route('index');
+
+        dd($request->all());
+    }
 }
+
