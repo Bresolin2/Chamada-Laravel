@@ -21,7 +21,6 @@ class AlunoController extends Controller
             }
         })->get();
 
-
         return view('index', compact('alunos'));
     }
 
