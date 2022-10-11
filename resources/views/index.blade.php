@@ -33,6 +33,7 @@
                 </li>
             @endforeach
         </ul>
+
         <a class="btn btn-primary" href="{{ route('create') }}" class="">Cadastrar aluno</a>
 
     
