@@ -48,7 +48,20 @@ class AlunoController extends Controller
         if (!$alunos = AlunoModel::find($id))
             return redirect()->route('index');
 
-        dd($request->all());
+        $data = $request->only('nome', 'email', 'telefone');
+
+        $alunos->update($data);
+
+        return redirect()->route('index');
+    }
+
+    public function destroy($id)
+    {
+        if (!$alunos = AlunoModel::find($id))
+            return redirect()->route('index');
+
+        $alunos->delete();
+
+        return redirect()->route('index');
     }
 }
-

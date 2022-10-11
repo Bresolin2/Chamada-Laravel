@@ -11,9 +11,9 @@
         @foreach ($alunos as $aluno)
             <li>
                 <b> Id:</b> {{ $aluno->id }} <br>
-                <b> Aluno:</b> {{ $aluno->nome }} <br>
-                <a href="{{ route('edit', $aluno->id) }}">Editar</a><br>
-                <a href="{{ route('show', $aluno->id) }}">Detalhes</a><br><br>
+                <b> Aluno:</b> {{ $aluno->nome }} 
+                | <a href="{{ route('edit', $aluno->id) }}">Editar</a>
+                | <a href="{{ route('show', $aluno->id) }}">Detalhes</a><br><br>
             </li>
         @endforeach
     </ul>

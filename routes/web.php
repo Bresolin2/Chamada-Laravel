@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
 
+    Route::delete('/delete/{id}', [AlunoController::class, 'destroy'])->name('destroy');
     Route::put('/{id}', [AlunoController::class, 'update'])->name('update');
     Route::get('/editar/{id}', [AlunoController::class, 'edit'])->name('edit');
     Route::get('/index', [AlunoController::class, 'index'])->name('index');

@@ -23,13 +23,25 @@ class StoreUpdateAlunoFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $id = $this->id ?? '';
+
+        $rules = [
             'nome' => 'required|string|max:100|min:3',
             'email' => [
                 'required',
                 'email',
-                'unique:alunos',
+                'unique:alunos, email, {$id}, id',
             ]
         ];
+
+        if ($this->method('PUT')) {
+            $rules['email'] = [
+                'nullable',
+                'email',
+                'unique:alunos'
+            ];
+        }
+
+        return $rules;
     }
 }
