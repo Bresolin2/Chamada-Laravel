@@ -9,17 +9,19 @@ use Illuminate\Support\Facades\Redis;
 
 class AlunoController extends Controller
 {
+    
     public function index(Request $request)
     {
+
         $filtro = $request->search;
-        $alunos = AlunoModel::where(function ($query) use ($filtro){
+        $alunos = AlunoModel::where(function ($query) use ($filtro) {
             if ($filtro) {
-            $query->where('nome', 'LIKE', "%{$filtro}%");
-            $query->where('email', "%{$filtro}%");
-        }
+                $query->where('nome', 'LIKE', "%{$filtro}%");
+                $query->where('email', "%{$filtro}%");
+            }
         })->get();
-           
-        
+
+
         return view('index', compact('alunos'));
     }
 
