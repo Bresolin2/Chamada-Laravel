@@ -7,6 +7,11 @@
         <a href="{{route('create')}}">Cadastrar aluno</a>
     </h1>
 
+    <form action="{{route('index')}}" method="get">
+        <input type="text" name="search" placeholder="Pesquisar">
+        <button>Pesquisar</button>
+    </form>
+
     <ul>
         @foreach ($alunos as $aluno)
             <li>
