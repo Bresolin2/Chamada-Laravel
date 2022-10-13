@@ -40,8 +40,9 @@ class AlunoController extends Controller
     {
         AlunoModel::create($request->only('nome'));
         if ($request->foto) {
-            $extension = $request->foto->getClientOriginalExtension();
-            $data['foto'] = $request->foto->storeAs('alunos', now() . "{$extension}");
+            $data['foto'] = $request->foto->store('alunos');
+            //$extension = $request->foto->getClientOriginalExtension();
+            //$data['foto'] = $request->foto->storeAs('alunos', now() . "{$extension}");
         }
 
         return redirect()->route('index');

@@ -22,7 +22,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col"><b>Foto: </b></th>
+                    <th scope="col"><b> Foto:</b></th>
                     <th scope="col"><b> Id:</b> </th>
                     <th scope="col"><b> Aluno:</b></th>
                 </tr>
@@ -30,7 +30,14 @@
             <tbody class="table-group-divider">
                 @foreach ($alunos as $aluno)
                     <tr>
-                        <td>{{ $aluno->foto }}</td>
+                        <td>
+                            @if ($aluno->foto)
+                                <img src="{{ url("storage/{$alunos->foto}") }}">
+                            @else
+                                <img src="{{ url('images/favicon.ico') }}">
+                            @endif
+                            {{ $aluno->foto }}
+                        </td>
                         <td>{{ $aluno->id }}</td>
                         <td>{{ $aluno->nome }}</td>
                         <td><a class="btn btn-info" href="{{ route('show', $aluno->id) }}">Detalhes</a></td>
