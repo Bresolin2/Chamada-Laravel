@@ -22,11 +22,11 @@
         <br>
     </div>
     <div class="col-sm-20">
-        <label for="foto" class="form-label">Foto:</label>
-        <input type="file" class="form-control" name="foto" id="foto">
+        <label for="image">Foto:</label>
+        <input type="file" class="form-control-file" name="image" id="image">
         <br>
     </div>
 </div>
-<div class="ms-4">
+<div class="ms-4 mt-4">
     <button class="btn btn-outline-success" type="submit">Editar/Cadastrar</button>
 </div>

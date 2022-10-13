@@ -9,20 +9,42 @@ use Illuminate\Support\Facades\Redis;
 
 class AlunoController extends Controller
 {
-    
+
     public function index(Request $request)
     {
-        $filtro = $request->search;
-        $alunos = AlunoModel::where(function ($query) use ($filtro) {
-            if ($filtro) {
-                $query->where('nome', 'LIKE', "%{$filtro}%");
-                $query->where('email', "%{$filtro}%");
-            }
-        })->get();
-
+        $alunos = AlunoModel::paginate(10);
         return view('index', compact('alunos'));
     }
 
+    public function search(Request $request)
+    {
+        $paginacao = 10;
+        $selectFiltro = $request->input("select_filtro");
+        $filtro = $request->input("filtro");
+
+        switch ($selectFiltro) {
+            case 1:
+                $alunos = AlunoModel::where('id', $filtro)->paginate($paginacao);
+                break;
+            case 2:
+                $alunos = AlunoModel::where('nome', 'LIKE', "%{$filtro}%")->paginate($paginacao);
+                break;
+            case 3:
+                $alunos = AlunoModel::where('email', 'LIKE', "%{$filtro}%")->paginate($paginacao);
+                break;
+            case 4:
+                $alunos = AlunoModel::where('telefone', 'LIKE', "%{$filtro}%")->paginate($paginacao);
+                break;
+            // case 5:
+            //     $alunos = DB::table('maxirecibo_clientes')
+            //         ->leftJoin('maxirecibo_permissions', 'maxirecibo_permissions.id_client', '=', 'maxirecibo_clientes.id')
+            //         ->where('maxirecibo_permissions.ativo', $filtro)
+            //         ->paginate($paginacao);
+            //     break;
+        }
+        return view('index', compact('alunos'));
+    }
+        
     public function show($id)
     {
         if (!$alunos = AlunoModel::find($id))
@@ -38,12 +60,30 @@ class AlunoController extends Controller
 
     public function store(StoreUpdateAlunoFormRequest $request)
     {
-        AlunoModel::create($request->only('nome'));
-        if ($request->foto) {
-            $data['foto'] = $request->foto->store('alunos');
-            //$extension = $request->foto->getClientOriginalExtension();
-            //$data['foto'] = $request->foto->storeAs('alunos', now() . "{$extension}");
+
+        $aluno = AlunoModel::create([
+            'nome' => $request->input('nome'),
+            'email' => $request->input('email'),
+            'telefone' => $request->input('telefone')
+        ]);
+
+
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = $aluno->id . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
         }
+
+        $alunoUpdate = AlunoModel::find($aluno->id);
+        $alunoUpdate->image = $aluno->id . "." . $extension;
+        $alunoUpdate->save();
 
         return redirect()->route('index');
     }
@@ -58,12 +98,29 @@ class AlunoController extends Controller
 
     public function update(Request $request, $id)
     {
-        if (!$alunos = AlunoModel::find($id))
+        if (!$aluno = AlunoModel::find($id)) {
             return redirect()->route('index');
+        }
 
-        $data = $request->only('nome', 'email', 'telefone');
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
 
-        $alunos->update($data);
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = $aluno->id . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+        }else{
+            $imageName = null;
+        }
+
+        $aluno->nome = $request->input('nome');
+        $aluno->email = $request->input('email');
+        $aluno->telefone = $request->input('telefone');
+        $aluno->image = $imageName;
+        $aluno->save();
 
         return redirect()->route('index');
     }

@@ -24,7 +24,7 @@
         <tbody>
             <tr>
                 <th scope="row">{{ $alunos->id }}</th>
-                <td>{{ $alunos->foto }}</td>
+                <td><img src="/img/events/{{$alunos->image}}"></td>
                 <td>{{ $alunos->nome }}</td>
                 <td>{{ $alunos->email }}</td>
                 <td>{{ $alunos->telefone }}</td>
@@ -33,13 +33,13 @@
     </table>
 </div>
 
-    <form action="{{ route('destroy', $alunos->id) }}" method="POST">
+    <form id="frmDelete" action="{{ route('destroy', $alunos->id) }}" method="POST">
         @method('DELETE')
         @csrf
 
     </form>
 
     <div class="ms-4">
-        <button class="btn btn-outline-danger btn-lg" type="submit">Deletar</button>
+        <button form="frmDelete" class="btn btn-outline-danger btn-lg" type="submit">Deletar</button>
     </div>
 @endsection
