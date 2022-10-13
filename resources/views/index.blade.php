@@ -22,28 +22,29 @@
                 <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
         </div>
-      </nav>
-    <table class="table ms-4 me-4">
-      <thead>
-        <tr>
-          <th scope="col"><b> Id:</b> </th>
-          <th scope="col"><b> Aluno:</b> </th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        @foreach ($alunos as $aluno)
+    </nav>
+
+    <table class="table ms-4">
+        <thead>
             <tr>
-                <th>{{ $aluno->id }}</th> <br>
-                <td>{{ $aluno->nome }}</td>
-                <td><a class="btn btn-primary" href="{{ route('edit', $aluno->id) }}">Editar</a></td>
-                <td><a class="btn btn-primary" href="{{ route('show', $aluno->id) }}">Detalhes</a></td><br><br>
+                <th scope="col"><b> Id:</b> </th>
+                <th scope="col"><b> Aluno:</b></th>
             </tr>
-        @endforeach
-      </tbody>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach ($alunos as $aluno)
+                <tr>
+                    <td>{{ $aluno->id }}</td>
+                    <td>{{ $aluno->nome }}</td>
+                    <td><a class="btn btn-primary" href="{{ route('edit', $aluno->id) }}">Editar</a></td>
+                    <td><a class="btn btn-primary" href="{{ route('show', $aluno->id) }}">Detalhes</a></td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
 
-
-    <a class="btn btn-success btn-lg float-right" href="{{ route('create') }}" class="">Cadastrar</a>
-
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-success btn-lg float-right" href="{{ route('create') }}" class="">Cadastrar</a>
+    </div>
 
 @endsection
