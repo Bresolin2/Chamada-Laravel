@@ -31,7 +31,12 @@ class StoreUpdateAlunoFormRequest extends FormRequest
                 'required',
                 'email',
                 'unique:alunos, email, {$id}, id',
-            ]
+            ],
+            'image' => [
+                'nullable',
+                'image',
+                'max:2048'
+            ],
         ];
 
         if ($this->method('PUT')) {

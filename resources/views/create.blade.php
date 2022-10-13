@@ -3,16 +3,16 @@
 @section('title', 'Cadastrar Aluno')
 
 @section('content')
-<nav class="navbar bg-light">
+<nav class="navbar" style="background-color: #422994;">
     <div class="container-fluid">
-        <a class="navbar-brand"><b>Cadastrar usuário</b></a>
-        <a class="btn btn-outline-primary" href="{{ route('index') }}">Voltar</a>
+        <a class="navbar-brand" style="color: white"><b>Cadastrar usuário</b></a>
+        <a class="btn btn-primary" href="{{ route('index') }}">Voltar</a>
     </div>
 </nav>
 
 @include('includes.validations-form')
 
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @include('_partials.form')
     </form>

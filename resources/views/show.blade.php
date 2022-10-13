@@ -3,13 +3,14 @@
 @section('title', 'Informações do Aluno')
 
 @section('content')
-    <nav class="navbar bg-light">
+    <nav class="navbar" style="background-color: #422994;">
         <div class="container-fluid">
-            <a class="navbar-brand"><b>Detalhes do usuário</b></a>
-            <a class="btn btn-outline-primary" href="{{ route('index') }}">Voltar</a>
+            <a class="navbar-brand" style="color: white"><b>Detalhes do Aluno</b></a>
+            <a class="btn btn-primary" href="{{ route('index') }}">Voltar</a>
         </div>
     </nav>
     
+    <div class="row g-3 me-3 ms-3">
     <table class="table">
         <thead>
             <tr>
@@ -30,13 +31,15 @@
             </tr>
         </tbody>
     </table>
+</div>
+
     <form action="{{ route('destroy', $alunos->id) }}" method="POST">
         @method('DELETE')
         @csrf
 
     </form>
 
-    <div class="d-grid gap-2 d-md-flex">
+    <div class="ms-4">
         <button class="btn btn-outline-danger btn-lg" type="submit">Deletar</button>
     </div>
 @endsection
