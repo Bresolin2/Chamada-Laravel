@@ -39,7 +39,6 @@ class AlunoController extends Controller
     public function store(StoreUpdateAlunoFormRequest $request)
     {
         AlunoModel::create($request->only('nome'));
-
         if ($request->foto) {
             $extension = $request->foto->getClientOriginalExtension();
             $data['foto'] = $request->foto->storeAs('alunos', now() . "{$extension}");
