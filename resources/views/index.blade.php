@@ -15,26 +15,35 @@
 
     <nav class="navbar bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand"></a>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" name="search" id="search" type="search" placeholder="Pesquisar" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-          </form>
+            <a class="navbar-brand"></a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" name="search" id="search" type="search" placeholder="Pesquisar"
+                    aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+            </form>
         </div>
       </nav>
+    <table class="table ms-4 me-4">
+      <thead>
+        <tr>
+          <th scope="col"><b> Id:</b> </th>
+          <th scope="col"><b> Aluno:</b> </th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        @foreach ($alunos as $aluno)
+            <tr>
+                <th>{{ $aluno->id }}</th> <br>
+                <td>{{ $aluno->nome }}</td>
+                <td><a class="btn btn-primary" href="{{ route('edit', $aluno->id) }}">Editar</a></td>
+                <td><a class="btn btn-primary" href="{{ route('show', $aluno->id) }}">Detalhes</a></td><br><br>
+            </tr>
+        @endforeach
+      </tbody>
+    </table>
 
-        <ul>
-            @foreach ($alunos as $aluno)
-                <li>
-                    <b> Id:</b> {{ $aluno->id }} <br>
-                    <b> Aluno:</b> {{ $aluno->nome }}
-                    | <a href="{{ route('edit', $aluno->id) }}">Editar</a>
-                    | <a href="{{ route('show', $aluno->id) }}">Detalhes</a><br><br>
-                </li>
-            @endforeach
-        </ul>
 
-        <a class="btn btn-primary" href="{{ route('create') }}" class="">Cadastrar aluno</a>
+    <a class="btn btn-success btn-lg float-right" href="{{ route('create') }}" class="">Cadastrar</a>
 
-    
+
 @endsection
