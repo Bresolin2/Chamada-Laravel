@@ -23,7 +23,7 @@
     </div>
     <div class="col-sm-20">
         <label for="foto" class="form-label">Foto:</label>
-        <input type="file" class="form-control" name="foto" id="foto">
+        <input type="file" class="form-control" name="image" id="image">
         <br>
     </div>
 </div>
