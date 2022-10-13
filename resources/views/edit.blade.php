@@ -3,7 +3,12 @@
 @section('title', 'Editar Aluno')
 
 @section('content')
-    <h1>Editar aluno → {{ $alunos->nome }}</h1>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand"><b>Editar aluno → {{ $alunos->nome }}</b></a>
+            <a class="btn btn-outline-primary" href="{{ route('index') }}">Voltar</a>
+        </div>
+    </nav>
 
     @include('includes.validations-form')
 

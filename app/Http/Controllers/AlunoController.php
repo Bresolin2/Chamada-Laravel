@@ -12,7 +12,6 @@ class AlunoController extends Controller
     
     public function index(Request $request)
     {
-
         $filtro = $request->search;
         $alunos = AlunoModel::where(function ($query) use ($filtro) {
             if ($filtro) {
