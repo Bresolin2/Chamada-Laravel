@@ -19,6 +19,20 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    <style>
+        body {
+            background: linear-gradient(50deg, #C2DED9, #5DBF90, #C2DED9);
+
+        }
+
+        .btn-verde {
+            background-color: #000000;
+        }
+        .btn-verde:hover {
+            background-color:black;
+            color: white;
+        }
+    </style>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

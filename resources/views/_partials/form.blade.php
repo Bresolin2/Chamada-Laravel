@@ -7,26 +7,31 @@
 @endif
 @csrf
 
-<div class="row g-3 me-3 ms-3 mt-3">
-    <div class="col-sm-5">
-        <label for="nome" class="form-label">Nome:</label>
-        <input type="text" class="form-control" name="nome" id="nome" value="{{ $alunos->nome ?? old('nome') }}">
+<div class="container">
+    <div class="row g-3 me-3 ms-3 mt-3">
+        <div class="col-sm-5">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" name="nome" id="nome"
+                value="{{ $alunos->nome ?? old('nome') }}">
+        </div>
+        <div class="col-sm-5">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" name="email" id="email"
+                value="{{ $alunos->email ?? old('email') }}">
+        </div>
+        <div class="col-sm-10">
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" class="form-control" name="telefone" id="telefone"
+                value="{{ $alunos->telefone ?? old('telefone') }}">
+            <br>
+        </div>
+        <div class="col-sm-25">
+            <label for="image">Foto:</label>
+            <input type="file" class="form-control-file" name="image" id="image">
+            <br>
+        </div>
     </div>
-    <div class="col-sm-5">
-        <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" name="email" id="email" value="{{ $alunos->email ?? old('email') }}">
+    <div class="ms-4 mt-4">
+        <button class="btn btn-lg btn-custom btn-verde" type="submit">Editar/Cadastrar</button>
     </div>
-    <div class="col-sm-10">
-        <label for="telefone" class="form-label">Telefone:</label>
-        <input type="text" class="form-control" name="telefone" id="telefone" value="{{ $alunos->telefone ?? old('telefone') }}">
-        <br>
-    </div>
-    <div class="col-sm-20">
-        <label for="image">Foto:</label>
-        <input type="file" class="form-control-file" name="image" id="image">
-        <br>
-    </div>
-</div>
-<div class="ms-4 mt-4">
-    <button class="btn btn-outline-success" type="submit">Editar/Cadastrar</button>
 </div>

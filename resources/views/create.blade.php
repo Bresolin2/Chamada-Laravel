@@ -5,7 +5,7 @@
 @section('content')
 <nav class="navbar" style="background-color: #422994;">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: white"><b>Cadastrar usuário</b></a>
+        <a class="navbar-brand" style="color: white"><b>Cadastrar Aluno</b></a>
         <a class="btn btn-primary" href="{{ route('index') }}">Voltar</a>
     </div>
 </nav>
