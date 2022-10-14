@@ -21,7 +21,7 @@
 
     <style>
         body {
-            background: linear-gradient(50deg, #ffffff, #e4d2f5);
+            background: linear-gradient(50deg, #d4fff0, #d4ffd7);
 
         }
         .btn-roxo{

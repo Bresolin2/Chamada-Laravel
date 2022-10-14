@@ -10,13 +10,13 @@ class TurmaController extends Controller
 {
     public function index(Request $request)
     {
-        $turmas = TurmaModel::paginate(10);
+        $turmas = TurmaModel::paginate(100);
         return view('turma.index', compact('turmas'));
     }
 
     public function search(Request $request)
     {
-        $paginacao = 10;
+        $paginacao = 100;
         $selectFiltro = $request->input("select_filtro");
         $filtro = $request->input("filtro");
 

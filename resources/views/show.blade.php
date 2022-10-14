@@ -6,7 +6,7 @@
     <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
             <a class="navbar-brand" style="color: white"><b>Detalhes do Aluno</b></a>
-            <a class="btn btn-primary" href="{{ route('index') }}">Voltar</a>
+            <a class="btn btn-primary" href="{{ route('index') }}"><i class="bi bi-arrow-90deg-left"></i> Voltar</a>
         </div>
     </nav>
     <div class="container">
@@ -41,7 +41,8 @@
         </form>
 
         <div class="ms-4">
-            <button form="frmDelete" class="btn btn-outline-danger btn-lg" type="submit">Deletar</button>
+            <button form="frmDelete" class="btn btn-lg btn-custom btn-vermelho" type="submit"><i
+                class="bi bi-trash"></i></button>
         </div>
     </div>
 @endsection

@@ -6,7 +6,7 @@
     <nav class="navbar" style="background-color: #000;">
         <div class="container-fluid">
             <a class="navbar-brand" style="color: white"><b>Editar Turmas → {{ $turmas->nome }}</b></a>
-            <a class="btn btn-primary" href="{{ route('index_turma') }}">Voltar</a>
+            <a class="btn btn-primary" href="{{ route('index_turma') }}"><i class="bi bi-arrow-90deg-left"></i> Voltar</a>
         </div>
     </nav>
 

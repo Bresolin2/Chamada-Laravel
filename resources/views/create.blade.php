@@ -6,7 +6,7 @@
 <nav class="navbar" style="background-color: rgb(0, 0, 0);">
     <div class="container-fluid">
         <a class="navbar-brand" style="color: white"><b>Cadastrar Aluno</b></a>
-        <a class="btn btn-primary" href="{{ route('index') }}">Voltar</a>
+        <a class="btn btn-primary" href="{{ route('index') }}"><i class="bi bi-arrow-90deg-left"></i> Voltar</a>
     </div>
 </nav>
 
