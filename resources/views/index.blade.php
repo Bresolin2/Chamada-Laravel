@@ -46,7 +46,7 @@
                             <form id="frmDelete" action="{{ route('destroy', $aluno->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-outline-danger btn-lg"
+                                <button class="btn btn-outline-danger"
                                 type="submit"><i class="bi bi-trash"></i></button>
                             </form>
                         </td>
