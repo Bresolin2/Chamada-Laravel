@@ -35,16 +35,16 @@ class AlunoController extends Controller
             case 4:
                 $alunos = AlunoModel::where('telefone', 'LIKE', "%{$filtro}%")->paginate($paginacao);
                 break;
-            // case 5:
-            //     $alunos = DB::table('maxirecibo_clientes')
-            //         ->leftJoin('maxirecibo_permissions', 'maxirecibo_permissions.id_client', '=', 'maxirecibo_clientes.id')
-            //         ->where('maxirecibo_permissions.ativo', $filtro)
-            //         ->paginate($paginacao);
-            //     break;
+                // case 5:
+                //     $alunos = DB::table('maxirecibo_clientes')
+                //         ->leftJoin('maxirecibo_permissions', 'maxirecibo_permissions.id_client', '=', 'maxirecibo_clientes.id')
+                //         ->where('maxirecibo_permissions.ativo', $filtro)
+                //         ->paginate($paginacao);
+                //     break;
         }
         return view('index', compact('alunos'));
     }
-        
+
     public function show($id)
     {
         if (!$alunos = AlunoModel::find($id))
@@ -79,11 +79,12 @@ class AlunoController extends Controller
 
             $requestImage->move(public_path('img/events'), $imageName);
 
+            $alunoUpdate = AlunoModel::find($aluno->id);
+            $alunoUpdate->image = $aluno->id . "." . $extension;
+            $alunoUpdate->save();
         }
 
-        $alunoUpdate = AlunoModel::find($aluno->id);
-        $alunoUpdate->image = $aluno->id . "." . $extension;
-        $alunoUpdate->save();
+
 
         return redirect()->route('index');
     }
@@ -111,15 +112,16 @@ class AlunoController extends Controller
             $imageName = $aluno->id . "." . $extension;
 
             $requestImage->move(public_path('img/events'), $imageName);
-
-        }else{
+            
+            $aluno->image = $imageName;
+        } else {
             $imageName = null;
         }
 
         $aluno->nome = $request->input('nome');
         $aluno->email = $request->input('email');
         $aluno->telefone = $request->input('telefone');
-        $aluno->image = $imageName;
+        
         $aluno->save();
 
         return redirect()->route('index');

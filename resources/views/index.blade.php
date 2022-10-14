@@ -6,9 +6,12 @@
 
     <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
-            <a class="navbar-brand" style="color: white"><b>Home</b></a>
-            <div class="ms-4">
-                <a class="btn btn-success" href="{{ route('create') }}">Cadastrar</a>
+            <a class="btn btn-lg btn-custom btn-white" href="{{route('index')}}"><b>Home</b></a>
+            <div>
+                <a class="btn btn-lg btn-custom btn-black" href="{{route('index_turma')}}">Turmas</a>
+            </div>
+            <div class="">
+                <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create') }}">Cadastrar</a>
             </div>
             <form class="d-flex" role="search">
                 @csrf

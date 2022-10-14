@@ -3,7 +3,7 @@
 @section('title', 'Informações do Aluno')
 
 @section('content')
-    <nav class="navbar" style="background-color: #422994;">
+    <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
             <a class="navbar-brand" style="color: white"><b>Detalhes do Aluno</b></a>
             <a class="btn btn-primary" href="{{ route('index') }}">Voltar</a>

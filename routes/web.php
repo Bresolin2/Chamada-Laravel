@@ -1,18 +1,29 @@
 <?php
 
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\TurmaController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
-
-    Route::delete('/delete/{id}', [AlunoController::class, 'destroy'])->name('destroy');
-    Route::put('/{id}', [AlunoController::class, 'update'])->name('update');
-    Route::get('/editar/{id}', [AlunoController::class, 'edit'])->name('edit');
-    Route::get('/index', [AlunoController::class, 'index'])->name('index');
-    Route::get('/cadastrar', [AlunoController::class, 'create'])->name('create');
-    Route::post('/cadastrado', [AlunoController::class, 'store'])->name('store');
-    Route::get('/visualizar/{id}', [AlunoController::class, 'show'])->name('show');
-    
+    Route::prefix('alunos')->group(function () {
+        Route::delete('/delete/{id}', [AlunoController::class, 'destroy'])->name('destroy');
+        Route::put('/{id}', [AlunoController::class, 'update'])->name('update');
+        Route::get('/editar/{id}', [AlunoController::class, 'edit'])->name('edit');
+        Route::get('/index', [AlunoController::class, 'index'])->name('index');
+        Route::get('/cadastrar', [AlunoController::class, 'create'])->name('create');
+        Route::post('/cadastrado', [AlunoController::class, 'store'])->name('store');
+        Route::get('/visualizar/{id}', [AlunoController::class, 'show'])->name('show');
+    });
+    Route::prefix('turmas')->group(function () {
+        Route::delete('/delete/{id}', [TurmaController::class, 'destroy'])->name('destroy_turma');
+        Route::put('/{id}', [TurmaController::class, 'update'])->name('update_turma');
+        Route::get('/editar/{id}', [TurmaController::class, 'edit'])->name('edit_turma');
+        Route::get('/index', [TurmaController::class, 'index'])->name('index_turma');
+        Route::get('/cadastrar', [TurmaController::class, 'create'])->name('create_turma');
+        Route::post('/cadastrado', [TurmaController::class, 'store'])->name('store_turma');
+        
+       
+    });
 });
 
 Route::get('/', function () {

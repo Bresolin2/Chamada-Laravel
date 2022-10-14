@@ -21,13 +21,19 @@
 
     <style>
         body {
-            background: linear-gradient(50deg, #d6bffd, #af60f9);
+            background: linear-gradient(50deg, #ffffff, #e4d2f5);
 
         }
-
+        .btn-roxo{
+            color: #ffffff;
+        }
+        .btn-roxo:hover {
+            background-color:rgb(29, 207, 47);
+            color: rgb(255, 255, 255);
+        }
         .btn-verde:hover {
             background-color:rgb(29, 207, 47);
-            color: white;
+            color: rgb(255, 255, 255);
         }
 
         .btn-vermelho:hover {
@@ -44,6 +50,22 @@
             background-color: rgb(55, 162, 255);
             color: #000;
         }
+        .btn-white{
+            color: #ffffff;
+        }
+        .btn-white:hover {
+            background-color: rgb(255, 255, 255);
+            color: #000;
+        }
+
+        .btn-black{
+            color: #ffffff;
+        }
+        .btn-black:hover {
+            background-color: rgb(249, 138, 64);
+            color: #000;
+        }
+        
     </style>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
