@@ -55,7 +55,7 @@ class TurmaController extends Controller
 
         $turmas = TurmaModel::create([
             'nome' => $request->input('nome'),
-            'observacoes' => $request->input('observacoes'),
+            'observacao' => $request->input('observacao'),
         ]);
 
         return redirect()->route('index_turma');
