@@ -14,6 +14,6 @@
 
     <form action="{{ route('store_turma') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @include('form')
+        @include('turma.form')
     </form>
 @endsection

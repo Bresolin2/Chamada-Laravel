@@ -6,7 +6,7 @@
     <nav class="navbar" style="background-color: #000;">
         <div class="container-fluid">
             <a class="navbar-brand" style="color: white"><b>Editar Turmas → {{ $turmas->nome }}</b></a>
-            <a class="btn btn-primary" href="{{ route('index_turmas') }}">Voltar</a>
+            <a class="btn btn-primary" href="{{ route('index_turma') }}">Voltar</a>
         </div>
     </nav>
 
@@ -14,6 +14,6 @@
 
     <form action="{{ route('update_turma', $turmas->id) }}" method="post" enctype="multipart/form-data">
         @method('PUT')
-       @include('form')
+       @include('turma.form')
     </form>
 @endsection

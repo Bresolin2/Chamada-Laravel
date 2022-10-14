@@ -45,7 +45,7 @@ class TurmaController extends Controller
     public function edit($id)
     {
         if (!$turmas = TurmaModel::find($id))
-            return redirect()->route('turma.index');
+            return redirect()->route('index_turma');
 
         return view('turma.edit', compact('turmas'));
     }
@@ -58,30 +58,30 @@ class TurmaController extends Controller
             'observacoes' => $request->input('observacoes'),
         ]);
 
-        return redirect()->route('turma.index');
+        return redirect()->route('index_turma');
     }
 
 
     public function update(Request $request, $id)
     {
         if (!$turmas = TurmaModel::find($id)) {
-            return redirect()->route('turma.index');
+            return redirect()->route('index_turma');
         }
         $turmas->nome = $request->input('nome');
         $turmas->observacao = $request->input('observacao');
         
         $turmas->save();
 
-        return redirect()->route('turma.index');
+        return redirect()->route('index_turma');
     }
 
     public function destroy($id)
     {
         if (!$turmas = TurmaModel::find($id))
-            return redirect()->route('turma.index');
+            return redirect()->route('index_turma');
 
         $turmas->delete();
 
-        return redirect()->route('turma.index');
+        return redirect()->route('index_turma');
     }
 }

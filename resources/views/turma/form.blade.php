@@ -15,9 +15,9 @@
                 value="{{ $turmas->nome ?? old('nome') }}">
         </div>
         <div class="col-sm-10">
-            <label for="obervacoes" class="form-label">Observações:</label>
-            <input type="text" class="form-control" name="obervacoes" id="obervacoes"
-                value="{{ $turmas->observacoes ?? old('observacoes') }}">
+            <label for="obervacao" class="form-label">Observações:</label>
+            <input type="text" class="form-control" name="obervacao" id="obervacao"
+                value="{{ $turmas->observacao ?? old('observacao') }}">
             <br>
         </div>
     </div>
