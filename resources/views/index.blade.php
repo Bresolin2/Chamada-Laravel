@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <nav class="navbar" style="background-color: #422994;">
+    <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
             <a class="navbar-brand" style="color: white"><b>Home</b></a>
             <div class="ms-4">

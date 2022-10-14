@@ -41,7 +41,7 @@
         }
 
         .btn-azul:hover {
-            background-color: rgb(86, 217, 244);
+            background-color: rgb(55, 162, 255);
             color: #000;
         }
     </style>
