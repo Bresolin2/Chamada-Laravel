@@ -32,7 +32,7 @@
 
         .btn-vermelho:hover {
             background-color:rgb(255, 0, 0);
-            color: rgb(255, 255, 255);
+            color: #000;
         }
         
         .btn-amarelo:hover {
