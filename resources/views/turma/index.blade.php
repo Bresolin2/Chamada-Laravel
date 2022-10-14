@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $turma->id }}</td>
                         <td>{{ $turma->nome }}</td>
-                        <td>{{ $turma->observacao}}</td>
+                        <td>{{ $turma->observacao }}</td>
                         <td><a class="btn btn-lg btn-custom btn-amarelo" href="{{ route('edit_turma', $turma->id) }}"><i
                                     class="bi bi-pencil-square"></i></a></td>
                         <td>
