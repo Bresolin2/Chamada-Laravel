@@ -25,12 +25,24 @@
 
         }
 
-        .btn-verde {
-            background-color: #000000;
-        }
         .btn-verde:hover {
-            background-color:black;
+            background-color:rgb(29, 207, 47);
             color: white;
+        }
+
+        .btn-vermelho:hover {
+            background-color:rgb(255, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+        
+        .btn-amarelo:hover {
+            background-color: rgb(250, 244, 73);
+            color: #000;
+        }
+
+        .btn-azul:hover {
+            background-color: rgb(86, 217, 244);
+            color: #000;
         }
     </style>
     <!-- Scripts -->

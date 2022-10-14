@@ -27,7 +27,7 @@
         </div>
         <div class="col-sm-25">
             <label for="image">Foto:</label>
-            <input type="file" class="form-control-file" name="image" id="image">
+            <input type="file" class="form-control-file" name="image" id="image" value="{{ $alunos->image ?? old('image') }}">
             <br>
         </div>
     </div>

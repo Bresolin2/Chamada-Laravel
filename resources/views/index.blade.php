@@ -40,15 +40,15 @@
                             </td>
                             <td>{{ $aluno->id }}</td>
                             <td>{{ $aluno->nome }}</td>
-                            <td><a class="btn btn-info" href="{{ route('show', $aluno->id) }}"><i
+                            <td><a class="btn btn-lg btn-custom btn-azul" href="{{ route('show', $aluno->id) }}"><i
                                         class="bi bi-eye-fill"></i></a></td>
-                            <td><a class="btn btn-primary" href="{{ route('edit', $aluno->id) }}"><i
+                            <td><a class="btn btn-lg btn-custom btn-amarelo" href="{{ route('edit', $aluno->id) }}"><i
                                         class="bi bi-pencil-square"></i></a></td>
                             <td>
                                 <form id="frmDelete" action="{{ route('destroy', $aluno->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="btn btn-outline-danger" type="submit"><i
+                                    <button class="btn btn-lg btn-custom btn-vermelho" type="submit"><i
                                             class="bi bi-trash"></i></button>
                                 </form>
                             </td>
