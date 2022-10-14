@@ -21,7 +21,7 @@
 
     <style>
         body {
-            background: linear-gradient(50deg, #C2DED9, #5DBF90, #C2DED9);
+            background: linear-gradient(50deg, #d6bffd, #af60f9);
 
         }
 
