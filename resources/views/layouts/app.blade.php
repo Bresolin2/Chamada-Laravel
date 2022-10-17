@@ -18,6 +18,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".dropdown-menu li").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 
     <style>
         body {
@@ -41,12 +51,12 @@
 
         .btn-roxo:hover {
             background-color: rgb(29, 207, 47);
-            
+
         }
 
         .btn-verde:hover {
             background-color: rgb(29, 207, 47);
-            
+
         }
 
         .btn-vermelho:hover {
@@ -56,7 +66,7 @@
 
         .btn-amarelo:hover {
             background-color: rgb(0, 25, 251);
-            color:#ffffff;
+            color: #ffffff;
         }
 
         .btn-azul:hover {
@@ -90,6 +100,14 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        #myInput {
+            padding: 20px;
+            margin-top: -6px;
+            border: 0;
+            border-radius: 0;
+            background: #f1f1f1;
         }
     </style>
     <!-- Scripts -->

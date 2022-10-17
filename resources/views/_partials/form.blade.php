@@ -5,6 +5,8 @@
         @endforeach
     </ul>
 @endif
+
+
 @csrf
 
 <div class="container">
@@ -27,7 +29,8 @@
         </div>
         <div class="col-sm-25">
             <label for="image">Foto:</label>
-            <input type="file" class="form-control-file" name="image" id="image" value="{{ $alunos->image ?? old('image') }}">
+            <input type="file" class="form-control-file" name="image" id="image"
+                value="{{ $alunos->image ?? old('image') }}">
             <br>
         </div>
 
@@ -37,7 +40,8 @@
             <option>white</option>
             <option selected="selected">purple</option>
           </select> --}}
-    </div>
+
+
     <div class="ms-4 mt-4">
         <button class="btn btn-lg btn-custom btn-verde" type="submit">Salvar</button>
     </div>
