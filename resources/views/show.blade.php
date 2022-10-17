@@ -34,14 +34,14 @@
         </div>
 
 
-        <form id="frmDelete" action="{{ route('destroy', $alunos->id) }}" method="POST">
+        <form id="frmDelete" action="{{ route('destroy', $alunos->id) }}"  method="POST">
             @method('DELETE')
             @csrf
 
         </form>
 
         <div class="ms-4">
-            <button form="frmDelete" class="btn btn-lg btn-custom btn-vermelho" type="submit"><i
+            <button form="frmDelete" class="btn btn-lg btn-custom btn-vermelho" onclick="return confirm('Deseja excluir permanentemente este aluno?')" type="submit"><i
                 class="bi bi-trash"></i></button>
         </div>
     </div>

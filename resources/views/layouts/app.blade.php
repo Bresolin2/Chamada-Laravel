@@ -25,18 +25,28 @@
 
         }
 
+        .btn-custom {
+            color: rgb(0, 0, 0);
+            border-radius: 500px;
+            -webkit-border-radius: 500px;
+            -moz-border-radius: 500px;
+            text-transform: uppercase;
+            transition: background 0.4s, color 0.4s;
+            padding: 10px 20px;
+        }
+
         .btn-roxo {
             color: #ffffff;
         }
 
         .btn-roxo:hover {
             background-color: rgb(29, 207, 47);
-            color: rgb(255, 255, 255);
+            
         }
 
         .btn-verde:hover {
             background-color: rgb(29, 207, 47);
-            color: rgb(255, 255, 255);
+            
         }
 
         .btn-vermelho:hover {
@@ -45,12 +55,12 @@
         }
 
         .btn-amarelo:hover {
-            background-color: rgb(250, 244, 73);
-            color: #000;
+            background-color: rgb(0, 25, 251);
+            color:#ffffff;
         }
 
         .btn-azul:hover {
-            background-color: rgb(55, 162, 255);
+            background-color: rgb(55, 252, 255);
             color: #000;
         }
 
