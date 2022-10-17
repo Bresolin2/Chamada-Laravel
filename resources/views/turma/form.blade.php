@@ -22,6 +22,6 @@
         </div>
     </div>
     <div class="ms-4 mt-4">
-        <button class="btn btn-lg btn-custom btn-verde" type="submit">Editar/Cadastrar</button>
+        <button class="btn btn-lg btn-custom btn-verde" type="submit">Salvar</button>
     </div>
 </div>

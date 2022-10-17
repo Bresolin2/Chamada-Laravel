@@ -11,7 +11,7 @@
             <a class="btn btn-lg btn-custom btn-black" href="{{route('index')}}">Alunos</a>
         </div>
         <div class="">
-            <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create_turma') }}">Cadastrar</a>
+            <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create_turma') }}"><i class="bi bi-person-plus"></i> Cadastrar</a>
         </div>
         <form class="d-flex" role="search">
             @csrf
