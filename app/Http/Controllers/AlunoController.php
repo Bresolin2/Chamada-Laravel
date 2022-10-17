@@ -134,6 +134,6 @@ class AlunoController extends Controller
 
         $alunos->delete();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('message', 'Aluno deletado com sucesso!');
     }
 }
