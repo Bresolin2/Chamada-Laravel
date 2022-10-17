@@ -34,6 +34,23 @@
             <br>
         </div>
 
+        <div class="s2-example">
+            <p>
+                <select class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
+                    @foreach($turmas as $turma)
+                    <option value="{{$turma->id}}">{{$turma->nome}}</option>
+                    @endforeach
+                </select>
+            </p>
+        </div>
+
+        <pre data-fill-from=".js-code-placeholder"></pre>
+
+        <script type="text/javascript" class="js-code-placeholder">
+            $(".js-example-basic-multiple-limit").select2({
+                maximumSelectionLength: 10
+            });
+        </script>
 
         {{-- <select class="form-control" multiple="multiple">
             <option selected="selected">orange</option>
@@ -42,7 +59,7 @@
           </select> --}}
 
 
-    <div class="ms-4 mt-4">
-        <button class="btn btn-lg btn-custom btn-verde" type="submit">Salvar</button>
+        <div class="ms-4 mt-4">
+            <button class="btn btn-lg btn-custom btn-verde" type="submit">Salvar</button>
+        </div>
     </div>
-</div>

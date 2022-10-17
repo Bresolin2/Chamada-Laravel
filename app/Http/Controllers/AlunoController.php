@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUpdateAlunoFormRequest;
 use App\Models\AlunoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use App\Models\TurmaModel;
 
 class AlunoController extends Controller
 {
@@ -35,12 +36,6 @@ class AlunoController extends Controller
             case 4:
                 $alunos = AlunoModel::where('telefone', 'LIKE', "%{$filtro}%")->paginate($paginacao);
                 break;
-                // case 5:
-                //     $alunos = DB::table('maxirecibo_clientes')
-                //         ->leftJoin('maxirecibo_permissions', 'maxirecibo_permissions.id_client', '=', 'maxirecibo_clientes.id')
-                //         ->where('maxirecibo_permissions.ativo', $filtro)
-                //         ->paginate($paginacao);
-                //     break;
         }
         return view('index', compact('alunos'));
     }
@@ -55,7 +50,8 @@ class AlunoController extends Controller
 
     public function create()
     {
-        return view('create');
+        $turmas = TurmaModel::getAll();
+        return view('create', compact('turmas'));
     }
 
     public function store(StoreUpdateAlunoFormRequest $request)
@@ -112,7 +108,7 @@ class AlunoController extends Controller
             $imageName = $aluno->id . "." . $extension;
 
             $requestImage->move(public_path('img/events'), $imageName);
-            
+
             $aluno->image = $imageName;
         } else {
             $imageName = null;
@@ -121,7 +117,7 @@ class AlunoController extends Controller
         $aluno->nome = $request->input('nome');
         $aluno->email = $request->input('email');
         $aluno->telefone = $request->input('telefone');
-        
+
         $aluno->save();
 
         return redirect()->route('index');
