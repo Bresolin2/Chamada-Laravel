@@ -36,22 +36,26 @@
 
         <div class="s2-example">
             <p>
-                <select name="selTurmas" id="selTurmas" class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
-                    @foreach($turmas as $turma)
-                    <option value="{{$turma->id}}">{{$turma->nome}}</option>
-                    @endforeach
+                <select name="selTurmas[]" id="selTurmas" class="js-example-basic-multiple-limit js-states form-control"
+                    multiple="multiple">
+                    <option value="{{ $turmas->nome }}"></option>
                 </select>
             </p>
         </div>
 
-        <pre data-fill-from=".js-code-placeholder"></pre>
+        <form action="{{ route('update', $alunos->id) }}">
 
-        <script type="text/javascript" class="js-code-placeholder">
-            $(".js-example-basic-multiple-limit").select2({
-                maximumSelectionLength: 10
-            });
-        </script>
 
+
+
+            <pre data-fill-from=".js-code-placeholder"></pre>
+
+            <script type="text/javascript" class="js-code-placeholder">
+                $(".js-example-basic-multiple-limit").select2({
+                    maximumSelectionLength: 10
+                });
+            </script>
+        </form>
         {{-- <select class="form-control" multiple="multiple">
             <option selected="selected">orange</option>
             <option>white</option>

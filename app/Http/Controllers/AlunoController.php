@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUpdateAlunoFormRequest;
 use App\Models\AlunoModel;
 use Illuminate\Http\Request;
 use App\Models\TurmaModel;
+use App\Models\AlunoTurmaModel;
 
 class AlunoController extends Controller
 {
@@ -44,6 +45,7 @@ class AlunoController extends Controller
         if (!$alunos = AlunoModel::find($id))
             return redirect()->route('index');
 
+
         return view('show', compact('alunos'));
     }
 
@@ -55,7 +57,7 @@ class AlunoController extends Controller
 
     public function store(StoreUpdateAlunoFormRequest $request)
     {
-        dd($request->all());
+        $turmas = $request->input('selTurmas');
 
         $aluno = AlunoModel::create([
             'nome' => $request->input('nome'),
@@ -63,6 +65,12 @@ class AlunoController extends Controller
             'telefone' => $request->input('telefone')
         ]);
 
+        foreach ($turmas as $turma) {
+            $aluno_turma = AlunoTurmaModel::create([
+                'idAluno' => $aluno->id,
+                'idTurma' => $turma
+            ]);
+        }
 
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -87,9 +95,10 @@ class AlunoController extends Controller
 
     public function edit($id)
     {
-        if (!$alunos = AlunoModel::find($id))
+        if (!$alunos = AlunoModel::find($id)) {
             return redirect()->route('index');
-
+        }
+        
         return view('edit', compact('alunos'));
     }
 

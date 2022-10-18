@@ -10,4 +10,10 @@ class TurmaModel extends Model
     protected $table = 'turmas';
     protected $fillable = ['nome','observacao'];
     public $timestamps = false;
+
+    public function turmas(){
+        return $this->belongsToMany(AlunoModel::class);
+    }
 }
+
+
