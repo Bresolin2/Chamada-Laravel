@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUpdateAlunoFormRequest;
 use App\Models\AlunoModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 use App\Models\TurmaModel;
 
 class AlunoController extends Controller
