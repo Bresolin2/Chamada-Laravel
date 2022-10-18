@@ -15,15 +15,14 @@
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
     <link href="{{ asset('vendor/Select2/css/select2.min.css') }}" rel="stylesheet" />
-    <script src="{{ asset('vendor/Select2/js/select2.min.js') }}"></script>
 
     <script src="{{ asset('vendor/jQuery-3.6.0/jquery-3.6.0.min.js') }}" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('vendor/Select2/js/select2.min.js') }}"></script>
+
     <script>
         $(document).ready(function() {
             $("#myInput").on("keyup", function() {

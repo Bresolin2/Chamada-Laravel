@@ -14,6 +14,6 @@
 
     <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @include('_partials.form')
+        @include('_partials.form', compact('turmas'))
     </form>
 @endsection

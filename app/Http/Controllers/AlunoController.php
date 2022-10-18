@@ -49,12 +49,13 @@ class AlunoController extends Controller
 
     public function create()
     {
-        $turmas = TurmaModel::getAll();
+        $turmas = TurmaModel::get();
         return view('create', compact('turmas'));
     }
 
     public function store(StoreUpdateAlunoFormRequest $request)
     {
+        dd($request->all());
 
         $aluno = AlunoModel::create([
             'nome' => $request->input('nome'),

@@ -36,7 +36,7 @@
 
         <div class="s2-example">
             <p>
-                <select class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
+                <select name="selTurmas" id="selTurmas" class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
                     @foreach($turmas as $turma)
                     <option value="{{$turma->id}}">{{$turma->nome}}</option>
                     @endforeach
