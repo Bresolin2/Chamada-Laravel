@@ -42,9 +42,11 @@ class AlunoController extends Controller
 
     public function show($id)
     {
-        if (!$alunos = AlunoModel::find($id))
+        if (!$alunos = AlunoModel::find($id)){
             return redirect()->route('index');
-
+        }
+        
+        $turmas = TurmaModel::with('id_aluno')->get();
 
         return view('show', compact('alunos'));
     }
@@ -65,12 +67,12 @@ class AlunoController extends Controller
             'telefone' => $request->input('telefone')
         ]);
 
-        foreach ($turmas as $turma) {
-            $aluno_turma = AlunoTurmaModel::create([
-                'idAluno' => $aluno->id,
-                'idTurma' => $turma
-            ]);
-        }
+        // foreach ($turmas as $turma) {
+        //     $aluno_turma = AlunoTurmaModel::create([
+        //         'idAluno' => $aluno->id,
+        //         'idTurma' => $turma
+        //     ]);
+        // }
 
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {

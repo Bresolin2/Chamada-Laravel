@@ -16,7 +16,7 @@ class AlunoModel extends Model
     public $timestamps = false;
 
     public function alunos(){
-        return $this->belongsToMany(TurmaModel::class);
+        return $this->belongsToMany(TurmaModel::class, 'alunos_turmas', 'id_alunos', 'id_turmas');
     }
 
 }
