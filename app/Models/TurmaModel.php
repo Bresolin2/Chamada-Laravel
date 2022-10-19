@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\AlunoModel;
 
 class TurmaModel extends Model
 {
@@ -11,7 +12,7 @@ class TurmaModel extends Model
     protected $fillable = ['nome','observacao'];
     public $timestamps = false;
 
-    public function turmas(){
+    public function alunos(){
         return $this->belongsToMany(AlunoModel::class);
     }
 }

@@ -100,6 +100,8 @@ class AlunoController extends Controller
         if (!$alunos = AlunoModel::find($id)) {
             return redirect()->route('index');
         }
+
+        $alunos = TurmaModel::with($id)->get();
         
         return view('edit', compact('alunos'));
     }
