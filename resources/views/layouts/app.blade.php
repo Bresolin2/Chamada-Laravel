@@ -88,12 +88,21 @@
             color: #000;
         }
 
+        .btn-orange {
+            color: #ffffff;
+        }
+
+        .btn-orange:hover {
+            background-color: rgb(249, 138, 64);
+            color: #000;
+        }
+
         .btn-black {
             color: #ffffff;
         }
 
         .btn-black:hover {
-            background-color: rgb(249, 138, 64);
+            background-color: rgb(233, 64, 249);
             color: #000;
         }
 

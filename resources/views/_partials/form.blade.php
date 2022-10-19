@@ -33,26 +33,29 @@
                 value="{{ $alunos->image ?? old('image') }}">
             <br>
         </div>
+        {{-- @foreach ($alunos->turmas as $turma)
+        {{$turma->nome}}
+        @endforeach --}}
 
-        {{-- <div class="s2-example">
+        <div class="s2-example">
             <p>
-                @foreach ($turmas as $turma)
-                    <select name="selTurmas[]" id="selTurmas"
-                        class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
-                        <option value="{{ $turma->nome }}"></option>
-                    </select>
-                @endforeach
+                <select name="selTurmas[]" id="selTurmas" class="js-example-basic-multiple-limit js-states form-control"
+                    multiple="multiple">
+                    @foreach ($turmas as $turma)
+                        <option value="{{ $turma->id }}" selected>{{ $turma->nome }}</option>
+                    @endforeach
+                </select>
             </p>
 
-        </div> --}}
+        </div>
 
-            <pre data-fill-from=".js-code-placeholder"></pre>
+        <pre data-fill-from=".js-code-placeholder"></pre>
 
-            <script type="text/javascript" class="js-code-placeholder">
-                $(".js-example-basic-multiple-limit").select2({
-                    maximumSelectionLength: 10
-                });
-            </script>
+        <script type="text/javascript" class="js-code-placeholder">
+            $(".js-example-basic-multiple-limit").select2({
+                maximumSelectionLength: 10
+            });
+        </script>
         </form>
         {{-- <select class="form-control" multiple="multiple">
             <option selected="selected">orange</option>

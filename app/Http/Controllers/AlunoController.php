@@ -42,10 +42,10 @@ class AlunoController extends Controller
 
     public function show($id)
     {
-        if (!$alunos = AlunoModel::find($id)){
+        if (!$alunos = AlunoModel::find($id)) {
             return redirect()->route('index');
         }
-        
+
         $turmas = AlunoTurmaModel::with('id_aluno')->get();
 
         return view('show', compact('alunos'));
@@ -101,9 +101,10 @@ class AlunoController extends Controller
             return redirect()->route('index');
         }
 
-        $alunos = TurmaModel::with($id)->get();
-        
-        return view('edit', compact('alunos'));
+
+        $turmas = TurmaModel::get();
+
+        return view('edit', compact('alunos', 'turmas'));
     }
 
     public function update(Request $request, $id)
@@ -130,6 +131,14 @@ class AlunoController extends Controller
         $aluno->nome = $request->input('nome');
         $aluno->email = $request->input('email');
         $aluno->telefone = $request->input('telefone');
+
+        $turmas = $request->input('selTurmas');
+        foreach ($turmas as $turma) {
+            $alunos_turmas = AlunoTurmaModel::updateOrCreate(
+                ['id_aluno' => $aluno->id, 'id_turma' => $turma]
+            );
+        }
+
 
         $aluno->save();
 

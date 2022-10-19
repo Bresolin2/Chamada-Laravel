@@ -8,9 +8,12 @@
         <div class="container-fluid">
             <a class="btn btn-lg btn-custom btn-white" href="{{route('index')}}"><b><i class="bi bi-house"></i></b></a>
             <div>
-                <a class="btn btn-lg btn-custom btn-black" href="{{route('index_turma')}}">Turmas</a>
+                <a class="btn btn-lg btn-custom btn-orange" href="{{route('index_turma')}}">Turmas</a>
             </div>
-            <div class="">
+            <div>
+                <a class="btn btn-lg btn-custom btn-black" href="{{route('index_turma')}}"><i class="bi bi-card-checklist"></i> Chamada</a>
+            </div>
+            <div>
                 <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create') }}"><i class="bi bi-person-plus"></i> Cadastrar</a>
             </div>
             <form class="d-flex" role="search">

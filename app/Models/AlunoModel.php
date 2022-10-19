@@ -13,4 +13,8 @@ class AlunoModel extends Model
     protected $fillable = ['nome','email', 'telefone', 'image'];
     public $timestamps = false;
 
+    public function turmas(){
+        return $this->belongsToMany(TurmaModel::class, 'alunos_turmas', 'id_aluno', 'id_turma');
+    }
+
 }

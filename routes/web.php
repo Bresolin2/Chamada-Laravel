@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\ChamadaController;
 use App\Http\Controllers\TurmaController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,8 +22,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/index', [TurmaController::class, 'index'])->name('index_turma');
         Route::get('/cadastrar', [TurmaController::class, 'create'])->name('create_turma');
         Route::post('/cadastrado', [TurmaController::class, 'store'])->name('store_turma');
-        
-       
+    });
+    Route::prefix('chamada')->group(function() {
+        Route::get('/index', [ChamadaController::class, 'index'])->name('index_chamada');
     });
 });
 
