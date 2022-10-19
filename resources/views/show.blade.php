@@ -27,7 +27,7 @@
                         <td><img style="max-height: 80px;" src="/img/events/{{ $alunos->image }}"></td>
                         <td>{{ $alunos->nome }}</td>
                         <td>{{ $alunos->email }}</td>
-                        <td>{{ $alunos->telefone }}</td>
+                        <td><a href="https://api.whatsapp.com/send?phone={{ $alunos->telefone }}">{{ $alunos->telefone }}</a></td>
                     </tr>
                 </tbody>
             </table>

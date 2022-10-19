@@ -56,7 +56,7 @@
                 </a>
 
                 <x-primary-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Reinfus_chamadagister') }}
                 </x-primary-button>
             </div>
         </form>

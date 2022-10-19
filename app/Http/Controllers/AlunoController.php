@@ -46,7 +46,7 @@ class AlunoController extends Controller
             return redirect()->route('index');
         }
         
-        $turmas = TurmaModel::with('id_aluno')->get();
+        $turmas = AlunoTurmaModel::with('id_aluno')->get();
 
         return view('show', compact('alunos'));
     }

@@ -34,7 +34,7 @@
             <br>
         </div>
 
-        <div class="s2-example">
+        {{-- <div class="s2-example">
             <p>
                 @foreach ($turmas as $turma)
                     <select name="selTurmas[]" id="selTurmas"
@@ -44,12 +44,7 @@
                 @endforeach
             </p>
 
-        </div>
-
-        
-
-
-
+        </div> --}}
 
             <pre data-fill-from=".js-code-placeholder"></pre>
 
