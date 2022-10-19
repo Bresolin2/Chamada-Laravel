@@ -106,6 +106,16 @@
             color: #000;
         }
 
+        .btn-brown {
+            color: #000000;
+        }
+
+        .btn-brown:hover {
+            background-color: rgb(100, 29, 207);
+            color: #ffffff;
+
+        }
+
         #load {
             position: fixed;
             display: block;

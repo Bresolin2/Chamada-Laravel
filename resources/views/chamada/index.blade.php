@@ -28,14 +28,15 @@
 
     <div class="container mt-4">
         <div class="row g-3 me-3 ms-3">
-            <select name="selTurmas" id="selTurmas" class="form-control">
-                @foreach ($turmas as $turma)
-                    <option value="{{ $turma->id }}" selected>{{ $turma->nome }}</option>
-                @endforeach
-            </select>
-            <button class="btn btn-lg btn-custom btn-roxo" type="submit">
-                
-            </button>
+            <form action="{{ route('listarAlunos_chamada') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <select name="selTurma" id="selTurma" class="form-control">
+                    @foreach ($turmas as $turma)
+                        <option value="{{ $turma->id }}" selected>{{ $turma->nome }}</option>
+                    @endforeach
+                </select>
+                <button class="btn btn-lg btn-custom btn-brown" type="submit">Pesquisar</button>
+            </form>
         </div>
     </div>
 @endsection

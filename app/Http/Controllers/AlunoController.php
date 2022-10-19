@@ -67,13 +67,6 @@ class AlunoController extends Controller
             'telefone' => $request->input('telefone')
         ]);
 
-        // foreach ($turmas as $turma) {
-        //     $aluno_turma = AlunoTurmaModel::create([
-        //         'idAluno' => $aluno->id,
-        //         'idTurma' => $turma
-        //     ]);
-        // }
-
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
 

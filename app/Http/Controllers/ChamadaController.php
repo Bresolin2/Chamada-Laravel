@@ -10,15 +10,20 @@ class ChamadaController extends Controller
 {
     public function index(Request $request)
     {
-        $chamadas = ChamadaModel::paginate(10);
-    
         $turmas = TurmaModel::get();
     
-
-        return view('chamada.index', compact('chamadas', 'turmas'));
+        return view('chamada.index', compact('turmas'));
     }
 
-    public function listarAlunos() {
+    public function listarAlunos(Request $request) {
+
+        $id_turma = $request->input('selTurma');
         
+        $turma = TurmaModel::find($id_turma);
+        $alunos = $turma->alunos;
+        
+        
+
+         
     }
 }

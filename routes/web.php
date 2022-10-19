@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::prefix('chamada')->group(function() {
         Route::get('/index', [ChamadaController::class, 'index'])->name('index_chamada');
+        Route::post('/listarAlunos', [ChamadaController::class, 'listarAlunos'])->name('listarAlunos_chamada');
     });
 });
 
