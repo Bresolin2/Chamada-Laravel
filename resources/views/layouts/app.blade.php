@@ -144,7 +144,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body onload="loading()">
+<body>
     <div class="">
         @yield('content')
     </div>

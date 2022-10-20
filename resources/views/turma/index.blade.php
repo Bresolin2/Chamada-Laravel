@@ -6,10 +6,7 @@
 
 <nav class="navbar" style="background-color: #000000;">
     <div class="container-fluid">
-        <a class="btn btn-lg btn-custom btn-white" href="{{route('index_turma')}}"><b><i class="bi bi-house"></i></b></a>
-        <div>
-            <a class="btn btn-lg btn-custom btn-black" href="{{route('index')}}">Alunos</a>
-        </div>
+        <a class="btn btn-lg btn-custom btn-white" href="{{route('index')}}"><b><i class="bi bi-arrow-left"></i> Voltar</b></a>
         <div class="">
             <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create_turma') }}"><i class="bi bi-person-plus"></i> Cadastrar</a>
         </div>

@@ -1,18 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Chamada')
+@section('title', 'Selecionar Turma')
 
 @section('content')
 
     <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
-            <a class="btn btn-lg btn-custom btn-white" href="{{ route('index_chamada') }}"><b><i
-                        class="bi bi-house"></i></b></a>
+            <a class="btn btn-lg btn-custom btn-white" href="{{ route('index') }}"><b><i class="bi bi-arrow-left"></i> Voltar</b></a>
             <div>
-                <a class="btn btn-lg btn-custom btn-orange" href="{{ route('index_turma') }}">Turmas</a>
-            </div>
-            <div>
-                <a class="btn btn-lg btn-custom btn-black" href="{{ route('index') }}"> Alunos</a>
+                <a class="btn btn-lg btn-custom btn-orange" href="{{ route('index_turma') }}"><i class="bi bi-people"></i> Turmas</a>
             </div>
             <div>
                 <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create') }}"><i class="bi bi-person-plus"></i>
@@ -25,6 +21,10 @@
             </form>
         </div>
     </nav>
+
+    <div class="container">
+        <b>Data: </b><input class="mt-4" id="inpdata" name="inpdata" type="date" value="{{ date('Y-m-d') }}">
+    </div>
 
     <div class="container mt-4">
         <div class="row g-3 me-3 ms-3">

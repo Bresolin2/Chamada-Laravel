@@ -6,13 +6,23 @@
 
     <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
-            <a class="btn btn-lg btn-custom btn-white" href="{{route('index')}}"><b><i class="bi bi-house"></i></b></a>
             <div>
-                <a class="btn btn-lg btn-custom btn-orange" href="{{route('index_turma')}}">Turmas</a>
+                <a class="btn btn-lg btn-custom btn-orange" href="{{route('index_turma')}}"><i class="bi bi-people"></i> Turmas</a>
             </div>
-            <div>
+            <div class="dropdown">
+                <button class="btn btn-lg btn-custom btn-black dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-card-checklist"></i> Chamada
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="{{route('index_chamada')}}"><i class="bi bi-check-square"></i> Realizar Chamada</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{{ route('relatorio_chamada') }}"><i class="bi bi-list"></i> Relatórios</a></li>
+                </ul>
+              </div>
+            
+            {{-- <div>
                 <a class="btn btn-lg btn-custom btn-black" href="{{route('index_chamada')}}"><i class="bi bi-card-checklist"></i> Chamada</a>
-            </div>
+            </div> --}}
             <div>
                 <a class="btn btn-lg btn-custom btn-roxo" href="{{ route('create') }}"><i class="bi bi-person-plus"></i> Cadastrar</a>
             </div>

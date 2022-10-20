@@ -6,7 +6,7 @@
 
     <nav class="navbar" style="background-color: #000000;">
         <div class="container-fluid">
-            <a class="btn btn-lg btn-custom btn-white" href="{{ route('index_chamada') }}"><b><i class="bi bi-backspace"></i>
+            <a class="btn btn-lg btn-custom btn-white" href="{{ route('index_chamada') }}"><b><i class="bi bi-arrow-left"></i></i>
                     Voltar</b></a>
 
             <form class="d-flex" role="search">
@@ -17,52 +17,64 @@
         </div>
     </nav>
 
-    <head>
+    <form id="salvar" action="{{ route('salvar_chamada') }}" method="POST">
+        @csrf
+
+        <head>
+            <div class="container mt-4">
+                <b>{{ $turma->nome }}</b>
+            </div>
+
+                <input hidden type="number" value="{{$turma->id}}" id="idTurma" name="idTurma">
+
+        </head>
+
         <div class="container mt-4">
-            <b>{{ $turma->nome }}</b>
-        </div>
-        <div class="container">
-            <b>Data: </b><input id="inpdata" type="date">
-        </div>
-
-    </head>
-
-    <div class="container mt-4">
-        <div class="row g-3 me-3 ms-3">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Código: </th>
-                        <th scope="col">Nome: </th>
-                        <th scope="col">Presença: </th>
-                        <th scope="col">Obs: </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($alunos as $aluno)
+            <div class="row g-3 me-3 ms-3">
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
-                            <td>{{ $aluno->id }}</td>
-                            <td>{{ $aluno->nome }}</td>
-                            <td>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="ck_{{ $aluno->id }}"
-                                        value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">Presente</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-group input-group-sm">
-                                    <input id="inp_{{ $aluno->id }}" type="text" class="form-control"
-                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                                </div>
-                            </td>
+                            <th scope="col">Código: </th>
+                            <th scope="col">Foto: </th>
+                            <th scope="col">Nome: </th>
+                            <th scope="col">Presença: </th>
+                            <th scope="col">Obs: </th>
                         </tr>
-                </tbody>
-            </table>
-            <form id="salvar" action="{{ route('salvar_chamada', $aluno->id) }}" method="POST">
+                    </thead>
+                    <tbody>
+                        @foreach ($alunos as $aluno)
+                            <tr>
+                                <td>{{ $aluno->id }}</td>
+                                <td>
+                                    @if ($aluno->image)
+                                        <img style="max-height: 40px;" src="/img/events/{{ $aluno->image }}">
+                                    @else
+                                        <img src="{{ url('images/favicon.ico') }}">
+                                    @endif
+                                </td>
+                                <td>{{ $aluno->nome }}</td>
+                                <td>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="ck_{{ $aluno->id }}" id="ck"
+                                            value="{{ $aluno->id }}">
+                                        <label class="form-check-label" for="inlineCheckbox1">Presente</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group input-group-sm">
+                                        <input id="inp_{{ $aluno->id }}" name="inp_{{ $aluno->id }}" type="text"
+                                            class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-sm">
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
                 <button class="btn btn-lg btn-custom btn-green" type="submit"> Salvar</button>
-            </form>
-            @endforeach
+
+            </div>
         </div>
-    </div>
+    </form>
 @endsection
