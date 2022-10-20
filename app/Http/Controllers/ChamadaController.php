@@ -24,4 +24,8 @@ class ChamadaController extends Controller
         
         return view('chamada.listarAlunos', compact('alunos', 'turma'));
     }
+
+    public function salvar() {
+        
+    }
 }

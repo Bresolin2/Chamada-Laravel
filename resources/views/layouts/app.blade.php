@@ -59,6 +59,12 @@
 
         }
 
+        .btn-green:hover {
+            background-color: rgb(20, 150, 35);
+            color: #ffffff;
+
+        }
+
         .btn-verde:hover {
             background-color: rgb(29, 207, 47);
 
