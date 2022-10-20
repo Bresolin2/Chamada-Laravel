@@ -22,8 +22,6 @@ class ChamadaController extends Controller
         $turma = TurmaModel::find($id_turma);
         $alunos = $turma->alunos;
         
-        
-
-         
+        return view('chamada.listarAlunos', compact('alunos', 'turma'));
     }
 }

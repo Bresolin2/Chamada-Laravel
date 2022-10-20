@@ -33,9 +33,6 @@
                 value="{{ $alunos->image ?? old('image') }}">
             <br>
         </div>
-        {{-- @foreach ($alunos->turmas as $turma)
-        {{$turma->nome}}
-        @endforeach --}}
 
         <div class="s2-example">
             <p>
@@ -57,13 +54,6 @@
             });
         </script>
         </form>
-        {{-- <select class="form-control" multiple="multiple">
-            <option selected="selected">orange</option>
-            <option>white</option>
-            <option selected="selected">purple</option>
-          </select> --}}
-
-
         <div class="ms-4 mt-4">
             <button class="btn btn-lg btn-custom btn-verde" type="submit">Salvar</button>
         </div>

@@ -34,7 +34,7 @@
                     @foreach ($turmas as $turma)
                         <option value="{{ $turma->id }}" selected>{{ $turma->nome }}</option>
                     @endforeach
-                </select>
+                </select><br>
                 <button class="btn btn-lg btn-custom btn-brown" type="submit">Pesquisar</button>
             </form>
         </div>
