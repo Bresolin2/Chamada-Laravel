@@ -9,7 +9,7 @@ use Termwind\Components\Raw;
 
 class ChamadaController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $turmas = TurmaModel::get();
 
@@ -80,6 +80,7 @@ class ChamadaController extends Controller
                 ]
             );
         }
+        return $this->index();
     }
 
     public function relatorio()

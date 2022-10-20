@@ -26,7 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('chamada')->group(function() {
         Route::get('/index', [ChamadaController::class, 'index'])->name('index_chamada');
         Route::post('/listarAlunos', [ChamadaController::class, 'listarAlunos'])->name('listarAlunos_chamada');
-        Route::post('/salvo', [ChamadaController::class, 'salvar'])->name('salvar_chamada');
+        Route::post('/salvar_chamada', [ChamadaController::class, 'salvar'])->name('salvar_chamada');
         Route::get('/relatorio', [ChamadaController::class, 'relatorio'])->name('relatorio_chamada');
         Route::post('/relatorios/gera_relatorio', [ChamadaController::class, 'gera_relatorio'])->name('gera_relatorio');
     });
