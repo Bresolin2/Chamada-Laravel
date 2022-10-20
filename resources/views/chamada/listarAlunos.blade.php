@@ -26,6 +26,7 @@
             </div>
 
                 <input hidden type="number" value="{{$turma->id}}" id="idTurma" name="idTurma">
+                <input hidden type="date" value="{{$data}}" id="data" name="data">
 
         </head>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ChamadaModel;
 use App\Models\TurmaModel;
 use Illuminate\Http\Request;
+use Termwind\Components\Raw;
 
 class ChamadaController extends Controller
 {
@@ -17,21 +18,21 @@ class ChamadaController extends Controller
 
     public function listarAlunos(Request $request)
     {
-
+        $data = $request->input('inpdata');
         $id_turma = $request->input('selTurma');
 
         $turma = TurmaModel::find($id_turma);
         $alunos = $turma->alunos;
 
-        return view('chamada.listarAlunos', compact('alunos', 'turma'));
+        return view('chamada.listarAlunos', compact('alunos', 'turma', 'data'));
     }
 
     public function salvar(Request $request)
     {
         //todos os campos do post
         $all = $request->all();
-
         $data = $request->input('inpdata');
+       
 
         //recuperar objeto turma
         $id_turma = $request->input('idTurma');
@@ -81,8 +82,26 @@ class ChamadaController extends Controller
         }
     }
 
-    public function relatorio() {
+    public function relatorio()
+    {
 
-        return view('chamada.relatorio');
+        $turmas = TurmaModel::get();
+
+        return view('chamada.relatorio', compact('turmas'));
+    }
+
+    public function gera_relatorio(Request $request)
+    {
+
+        $id_turma = $request->input('selTurma');
+        $dataInicio = $request->input('dataIn');
+        $dataFinal = $request->input('dataFim');
+
+        $presencas = ChamadaModel::where('id_turma', $id_turma)
+            ->whereBetween('data', [$dataInicio, $dataFinal])
+            ->get();
+            dd($presencas);
+
+        //return view('chamada.relatorio');
     }
 }

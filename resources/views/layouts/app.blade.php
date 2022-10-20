@@ -93,6 +93,14 @@
             background-color: rgb(255, 255, 255);
             color: #000;
         }
+        .btn-branco {
+            color: #000000;
+        }
+
+        .btn-branco:hover {
+            background-color: rgb(184, 215, 73);
+            color: #000;
+        }
 
         .btn-orange {
             color: #ffffff;
